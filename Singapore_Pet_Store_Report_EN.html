@@ -1,0 +1,919 @@
+<title>Singapore Pet Retail Market Research &amp; Feasibility Report</title>
+<style>
+  :root{
+    --paper:#F5F3EC; --ink:#16231F; --slate:#5B6B67; --petrol:#0C4A45; --petrol-bright:#0F6E66;
+    --brass:#8C6A18; --rule:rgba(22,35,31,0.14); --card-bg:#FBFAF5; --zebra:rgba(12,74,69,0.045);
+    --tag-vp-bg:#E3EFE8; --tag-vp-fg:#1D6B4B;
+    --tag-vs-bg:#E1EDF1; --tag-vs-fg:#1E6478;
+    --tag-md-bg:#F5EAD2; --tag-md-fg:#8A6118;
+    --tag-as-bg:#F2E3DD; --tag-as-fg:#9C4F37;
+    --shadow: 0 1px 2px rgba(22,35,31,0.06), 0 8px 24px rgba(22,35,31,0.05);
+  }
+  :root[data-theme="dark"]{
+    --paper:#0E1714; --ink:#EDE9DE; --slate:#9FB0AB; --petrol:#59C4B6; --petrol-bright:#7BD9CC;
+    --brass:#D2A54B; --rule:rgba(237,233,222,0.16); --card-bg:#131F1B; --zebra:rgba(89,196,182,0.06);
+    --tag-vp-bg:rgba(47,122,92,0.20); --tag-vp-fg:#86DDB1;
+    --tag-vs-bg:rgba(59,122,148,0.20); --tag-vs-fg:#86CCE3;
+    --tag-md-bg:rgba(169,131,46,0.20); --tag-md-fg:#E9C577;
+    --tag-as-bg:rgba(176,92,74,0.20); --tag-as-fg:#E7A088;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#0E1714; --ink:#EDE9DE; --slate:#9FB0AB; --petrol:#59C4B6; --petrol-bright:#7BD9CC;
+      --brass:#D2A54B; --rule:rgba(237,233,222,0.16); --card-bg:#131F1B; --zebra:rgba(89,196,182,0.06);
+      --tag-vp-bg:rgba(47,122,92,0.20); --tag-vp-fg:#86DDB1;
+      --tag-vs-bg:rgba(59,122,148,0.20); --tag-vs-fg:#86CCE3;
+      --tag-md-bg:rgba(169,131,46,0.20); --tag-md-fg:#E9C577;
+      --tag-as-bg:rgba(176,92,74,0.20); --tag-as-fg:#E7A088;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+    }
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
+
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size:16.5px; line-height:1.62; -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+    font-weight:600; text-wrap:balance; color:var(--ink); letter-spacing:0.001em;
+  }
+  a{color:var(--petrol);}
+  a:hover{color:var(--petrol-bright);}
+  code, .mono, .tabular, td.num, th.num{
+    font-family:"SF Mono","Cascadia Code",Consolas,"Liberation Mono",monospace;
+    font-variant-numeric:tabular-nums;
+  }
+
+  /* ---------- Title block ---------- */
+  .titleblock{
+    max-width:1180px; margin:0 auto; padding:4.5rem 2rem 2.5rem;
+    border-bottom:1px solid var(--rule);
+  }
+  .eyebrow-top{
+    font-family:"SF Mono","Cascadia Code",Consolas,monospace; font-size:0.72rem;
+    letter-spacing:0.14em; text-transform:uppercase; color:var(--slate); margin:0 0 1.1rem;
+  }
+  .titleblock h1{font-size:clamp(2.1rem, 4vw, 3.05rem); line-height:1.12; margin:0 0 0.85rem; max-width:20ch;}
+  .titleblock .sub{font-size:1.12rem; color:var(--slate); max-width:56ch; margin:0 0 1.75rem; font-weight:400;}
+  .meta-row{
+    display:flex; flex-wrap:wrap; gap:1.75rem; font-family:"SF Mono","Cascadia Code",Consolas,monospace;
+    font-size:0.78rem; color:var(--slate); text-transform:uppercase; letter-spacing:0.06em;
+  }
+  .meta-row strong{display:block; color:var(--ink); font-size:0.92rem; text-transform:none; letter-spacing:0; margin-top:0.2rem; font-weight:600;}
+
+  .statstrip{
+    max-width:1180px; margin:0 auto; padding:2rem 2rem 0.5rem;
+    display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
+    background:var(--rule); border:1px solid var(--rule); border-radius:10px; overflow:hidden;
+  }
+  .statstrip .stat{background:var(--card-bg); padding:1.15rem 1.3rem;}
+  .statstrip .stat .label{font-size:0.68rem; letter-spacing:0.09em; text-transform:uppercase; color:var(--slate); margin-bottom:0.4rem; font-family:"SF Mono",monospace;}
+  .statstrip .stat .value{font-size:1.18rem; font-weight:600; font-family:Georgia,serif; line-height:1.3;}
+  @media (max-width:760px){ .statstrip{grid-template-columns:1fr 1fr;} }
+
+  /* ---------- Layout ---------- */
+  .layout{max-width:1180px; margin:0 auto; display:grid; grid-template-columns:236px minmax(0,1fr); gap:3.2rem; padding:2.75rem 2rem 6rem;}
+  @media (max-width:960px){ .layout{grid-template-columns:1fr;} }
+
+  nav.toc{position:sticky; top:1.75rem; align-self:start; font-size:0.86rem;}
+  nav.toc .toclabel{font-family:"SF Mono",monospace; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--slate); margin-bottom:0.9rem;}
+  nav.toc ol{list-style:none; margin:0; padding:0; border-left:1px solid var(--rule);}
+  nav.toc li{margin:0;}
+  nav.toc a{
+    display:block; padding:0.38rem 0 0.38rem 0.95rem; color:var(--slate); text-decoration:none;
+    border-left:2px solid transparent; margin-left:-1px; transition:color .15s, border-color .15s;
+  }
+  nav.toc a:hover{color:var(--ink); border-left-color:var(--petrol);}
+  nav.toc .n{font-family:"SF Mono",monospace; font-size:0.72rem; color:var(--brass); margin-right:0.5rem;}
+
+  @media (max-width:960px){
+    nav.toc{position:static;}
+    nav.toc ol{display:none;}
+    nav.toc[open] ol{display:block; margin-top:0.75rem;}
+    nav.toc{border:1px solid var(--rule); border-radius:8px; padding:0.9rem 1rem; background:var(--card-bg);}
+  }
+
+  main.content{min-width:0; max-width:740px;}
+  main.content section{margin-bottom:3.4rem; scroll-margin-top:1.5rem;}
+  main.content h2{font-size:1.62rem; margin:0 0 0.15rem;}
+  main.content h3{font-size:1.18rem; margin:2rem 0 0.7rem; color:var(--petrol);}
+  main.content h4{font-size:1.0rem; margin:1.4rem 0 0.5rem;}
+  .sec-eyebrow{font-family:"SF Mono",monospace; font-size:0.74rem; color:var(--brass); letter-spacing:0.08em; margin:0 0 0.35rem;}
+  .sec-rule{border:none; border-top:1px solid var(--rule); margin:0.9rem 0 1.5rem;}
+  main.content p{margin:0 0 1.05rem; max-width:66ch;}
+  main.content ul, main.content ol{margin:0 0 1.05rem; padding-left:1.3rem; max-width:64ch;}
+  main.content li{margin-bottom:0.4rem;}
+  main.content strong{font-weight:650;}
+
+  /* ---------- Legend / callout ---------- */
+  .legend{
+    background:var(--card-bg); border:1px solid var(--rule); border-radius:10px;
+    padding:1.3rem 1.5rem; margin:0 0 1.3rem; box-shadow:var(--shadow);
+  }
+  .legend p:last-child{margin-bottom:0;}
+  .chiprow{display:flex; flex-wrap:wrap; gap:0.5rem; margin:0.8rem 0 1rem;}
+
+  .tag{
+    display:inline-flex; align-items:center; gap:0.35em; font-family:"SF Mono",monospace;
+    font-size:0.68rem; letter-spacing:0.03em; padding:0.22em 0.6em; border-radius:99px; white-space:nowrap;
+    font-weight:600;
+  }
+  .tag.vp{background:var(--tag-vp-bg); color:var(--tag-vp-fg);}
+  .tag.vs{background:var(--tag-vs-bg); color:var(--tag-vs-fg);}
+  .tag.md{background:var(--tag-md-bg); color:var(--tag-md-fg);}
+  .tag.as{background:var(--tag-as-bg); color:var(--tag-as-fg);}
+
+  /* ---------- Tables ---------- */
+  .tablewrap{overflow-x:auto; border:1px solid var(--rule); border-radius:10px; margin:0 0 1.4rem; box-shadow:var(--shadow); background:var(--card-bg);}
+  table{border-collapse:collapse; width:100%; font-size:0.87rem; min-width:520px;}
+  table caption{text-align:left; font-size:0.78rem; color:var(--slate); padding:0.7rem 1rem 0; font-family:"SF Mono",monospace;}
+  thead th{
+    background:var(--petrol); color:var(--paper); text-align:left; font-weight:600;
+    padding:0.65rem 0.9rem; font-size:0.76rem; letter-spacing:0.02em; position:sticky; top:0;
+  }
+  :root[data-theme="dark"] thead th, @media (prefers-color-scheme:dark){ thead th{color:#0E1714;} }
+  tbody td, tbody th{padding:0.62rem 0.9rem; border-top:1px solid var(--rule); vertical-align:top;}
+  tbody th{text-align:left; font-weight:600; background:transparent;}
+  tbody tr:nth-child(even){background:var(--zebra);}
+  td small, .cite{color:var(--slate); font-size:0.82em;}
+
+  /* score bar */
+  .scorebar{display:flex; align-items:center; gap:0.6rem; min-width:150px;}
+  .scorebar .track{flex:1; height:7px; background:var(--rule); border-radius:99px; overflow:hidden;}
+  .scorebar .fill{height:100%; background:linear-gradient(90deg, var(--petrol), var(--petrol-bright)); border-radius:99px;}
+  .scorebar .num{font-family:"SF Mono",monospace; font-size:0.78rem; min-width:2ch; text-align:right;}
+
+  /* risk severity stripes */
+  tr.risk-high{box-shadow:inset 4px 0 0 var(--tag-as-fg);}
+  tr.risk-medium{box-shadow:inset 4px 0 0 var(--tag-md-fg);}
+  tr.risk-low{box-shadow:inset 4px 0 0 var(--tag-vp-fg);}
+  .sev{font-size:0.7rem; text-transform:uppercase; letter-spacing:0.05em; font-family:"SF Mono",monospace; font-weight:700;}
+  .sev.risk-high{color:var(--tag-as-fg); box-shadow:none;}
+  .sev.risk-medium{color:var(--tag-md-fg); box-shadow:none;}
+  .sev.risk-low{color:var(--tag-vp-fg); box-shadow:none;}
+
+  blockquote{
+    margin:1.2rem 0; padding:0.2rem 0 0.2rem 1.1rem; border-left:3px solid var(--brass);
+    color:var(--slate); font-style:italic; max-width:64ch;
+  }
+
+  footer.doc-footer{
+    max-width:1180px; margin:0 auto; padding:2.5rem 2rem 4rem; border-top:1px solid var(--rule);
+    color:var(--slate); font-size:0.84rem;
+  }
+
+  ::selection{background:var(--petrol); color:var(--paper);}
+</style>
+
+<div class="titleblock">
+  <p class="eyebrow-top">Investment-Grade Market Research &middot; Consultant Prepared</p>
+  <h1>Singapore Pet Retail Market Research &amp; Feasibility Report</h1>
+  <p class="sub">A data-driven feasibility study for a first-time entrepreneur evaluating entry into Singapore's pet retail sector &mdash; market sizing, competitive landscape, site selection, regulatory pathway, and a three-scenario financial model.</p>
+  <div class="meta-row">
+    <div>Prepared for<strong>First-time pet retail entrepreneur</strong></div>
+    <div>Report type<strong>Feasibility &amp; investment study</strong></div>
+    <div>Date<strong>July 2026</strong></div>
+    <div>Geography<strong>Singapore</strong></div>
+  </div>
+</div>
+
+<div class="statstrip">
+  <div class="stat"><div class="label">Market size (working range)</div><div class="value">US$100&ndash;200M <span style="color:var(--slate); font-size:0.7em;">/ S$350&ndash;400M broad</span></div></div>
+  <div class="stat"><div class="label">Growth (segment CAGR)</div><div class="value">3.5&ndash;7% goods &middot; 8&ndash;11% services</div></div>
+  <div class="stat"><div class="label">Recommended model</div><div class="value">Premium Boutique + Grooming, Hybrid</div></div>
+  <div class="stat"><div class="label">Expected startup capital</div><div class="value">~S$462,000</div></div>
+</div>
+
+<div class="layout">
+  <nav class="toc" id="tocNav">
+    <div class="toclabel">On this page</div>
+    <ol>
+      <li><a href="#read-first"><span class="n">&sect;0</span>How to Read This Report</a></li>
+      <li><a href="#sec1"><span class="n">&sect;1</span>Executive Summary</a></li>
+      <li><a href="#sec2"><span class="n">&sect;2</span>Industry Analysis</a></li>
+      <li><a href="#sec3"><span class="n">&sect;3</span>Consumer Analysis</a></li>
+      <li><a href="#sec4"><span class="n">&sect;4</span>Competitor Analysis</a></li>
+      <li><a href="#sec5"><span class="n">&sect;5</span>Store Location Analysis</a></li>
+      <li><a href="#sec6"><span class="n">&sect;6</span>Business Model Comparison</a></li>
+      <li><a href="#sec7"><span class="n">&sect;7</span>Product Strategy</a></li>
+      <li><a href="#sec8"><span class="n">&sect;8</span>Supplier Analysis</a></li>
+      <li><a href="#sec9"><span class="n">&sect;9</span>Licensing &amp; Legal</a></li>
+      <li><a href="#sec10"><span class="n">&sect;10</span>Financial Analysis</a></li>
+      <li><a href="#sec11"><span class="n">&sect;11</span>Marketing Strategy</a></li>
+      <li><a href="#sec12"><span class="n">&sect;12</span>Technology Strategy</a></li>
+      <li><a href="#sec13"><span class="n">&sect;13</span>Risk Assessment</a></li>
+      <li><a href="#sec14"><span class="n">&sect;14</span>12-Month Roadmap</a></li>
+      <li><a href="#sec15"><span class="n">&sect;15</span>AI Opportunities</a></li>
+      <li><a href="#sec16"><span class="n">&sect;16</span>Final Recommendations</a></li>
+      <li><a href="#sec17"><span class="n">&sect;17</span>References</a></li>
+    </ol>
+  </nav>
+
+  <main class="content">
+
+    <section id="read-first">
+      <p class="sec-eyebrow">&sect;0</p>
+      <h2>How to Read This Report</h2>
+      <hr class="sec-rule"/>
+      <div class="legend">
+        <p>Singapore's pet market is small and dominated by unlisted private companies, so <strong>no single authoritative "Singapore pet market size" figure exists in the public domain.</strong> Every figure in this report is tagged so you know exactly how solid it is:</p>
+        <div class="chiprow">
+          <span class="tag vp">VERIFIED &middot; PRIMARY</span>
+          <span class="tag vs">VERIFIED &middot; SECONDARY</span>
+          <span class="tag md">MODELLED ESTIMATE</span>
+          <span class="tag as">ASSUMPTION / PROXY</span>
+        </div>
+        <p><span class="tag vp">VERIFIED &middot; PRIMARY</span> &mdash; a Singapore government source (AVS/NParks, HDB, URA, MOM, CPF Board, IRAS, ACRA, SingStat) or a named, dated syndicated report.<br/>
+        <span class="tag vs">VERIFIED &middot; SECONDARY</span> &mdash; a reputable news outlet, trade publication, or company disclosure, cross-checked where possible.<br/>
+        <span class="tag md">MODELLED ESTIMATE</span> &mdash; a figure we built ourselves (financial model, scoring, projections), built transparently from the inputs cited alongside it.<br/>
+        <span class="tag as">ASSUMPTION / PROXY</span> &mdash; no Singapore-specific data exists; we use the closest defensible proxy and say so.</p>
+        <p>Numbers in the last two categories are <strong>not facts</strong> &mdash; they are the judgment calls every consultant makes to produce a usable plan. Full source list is in <a href="#sec17">&sect;17 References</a>.</p>
+      </div>
+    </section>
+
+    <section id="sec1">
+      <p class="sec-eyebrow">&sect;1</p>
+      <h2>Executive Summary</h2>
+      <hr class="sec-rule"/>
+
+      <h3>1.1 &nbsp;Market Attractiveness &mdash; Moderate, Improving</h3>
+      <p>Singapore's pet care market is <strong>small but resilient and premiumizing</strong>. Depending on scope, estimates place it anywhere from <strong>~US$110M</strong> (narrow "pet care" definition, 2025) to <strong>~S$350&ndash;400M</strong> (broad definition including services) <span class="tag as">ASSUMPTION / PROXY</span> &mdash; see &sect;2.1 for full reconciliation &mdash; growing at roughly <strong>3.5&ndash;7% CAGR</strong> depending on sub-segment <span class="tag vs">VERIFIED &middot; SECONDARY</span>. This is not a high-growth market in volume terms &mdash; Singapore's pet population is <strong>plateauing</strong>, gated by the fact ~80% of residents live in HDB flats with historically tight pet restrictions <span class="tag vp">VERIFIED &middot; PRIMARY</span>. Growth instead comes from <strong>premiumization, services, and per-pet spend</strong> &mdash; a market that rewards a services-attached, higher-margin retail model over a pure commodity pet-food shop.</p>
+      <p>The <strong>September 2024 Cat Management Framework</strong> &mdash; Singapore's first legal cat-licensing regime, with ~41,000 cats licensed within its first year <span class="tag vp">VERIFIED &middot; PRIMARY, NParks</span> &mdash; is a genuine structural tailwind: it legitimizes and formalizes a previously grey-market cat-owning population, expanding the addressable customer base for cat-specific products and services.</p>
+
+      <h3>1.2 &nbsp;Opportunities</h3>
+      <ul>
+        <li><strong>Premiumization &amp; services gap</strong>: grooming, wellness, insurance, and pet-tech are growing faster than commodity pet food/products.</li>
+        <li><strong>Cat-specific white space</strong>: the new licensing regime is expanding a formal base that cat specialists still under-serve relative to dog-oriented incumbents.</li>
+        <li><strong>Boutique/premium positioning works</strong>: India's Heads Up For Tails entered in 2024 and reached 4 stores by 2026, proving investor and consumer appetite for a differentiated premium format.</li>
+        <li><strong>Omnichannel is default</strong>: ~45% of pet owners already buy pet food online; a store-only model cedes share to marketplace-native sellers.</li>
+        <li><strong>Underserved heartland pockets</strong>: several high-income, high-landed-housing areas (Bishan, Novena) show comparatively low existing pet-retail density &mdash; see &sect;5.</li>
+      </ul>
+
+      <h3>1.3 &nbsp;Risks</h3>
+      <ul>
+        <li><strong>Incumbent scale</strong>: Pet Lovers Centre's ~60&ndash;70 Singapore stores and full-service model make head-on mass-market competition unattractive for a first-time entrepreneur.</li>
+        <li><strong>Structural ceiling on pet population growth</strong>: HDB housing policy and a maturing pet count mean revenue must come from wallet share, not volume.</li>
+        <li><strong>Rising cost base</strong>: heartland shop rents on private sublets <strong>more than doubled year-on-year to a record S$7.34 psf/month by Q2 2025</strong> <span class="tag vp">VERIFIED &middot; PRIMARY-adjacent</span>, and mandatory Progressive Wage Model floors (effective 1 Sept 2025) compress margins.</li>
+        <li><strong>Regulatory compliance burden</strong>: AVS pet-shop licensing, URA change-of-use approval, fire safety certification, and GST registration all carry cost and lead time &mdash; see &sect;9.</li>
+        <li><strong>Import/supply chain exposure</strong>: reliance on international premium brands exposes the business to FX/freight risk; no confirmed Singapore-based pet-food OEM was identified.</li>
+      </ul>
+
+      <h3>1.4 &nbsp;Recommended Business Model</h3>
+      <p>A <strong>Premium/Boutique Lifestyle Store + Grooming Hybrid, omnichannel from day one</strong> (physical store + Shopify-based e-commerce + Shopee/Lazada presence), targeting a mid-to-premium price tier that avoids direct commodity-price competition with Pet Lovers Centre/Superpets while remaining more accessible than ultra-premium entrants like Heads Up For Tails. Full comparison in &sect;6.</p>
+
+      <h3>1.5 &nbsp;Feasibility</h3>
+      <p><strong>Conditionally feasible.</strong> The financial model in &sect;10 shows a single 1,000&ndash;1,200 sq ft store requiring <strong>~S$462,000</strong> <span class="tag md">MODELLED ESTIMATE</span> in startup capital under an expected case, reaching monthly break-even in <strong>Year 2</strong>, with full capital payback realistically landing in <strong>Year 4&ndash;5</strong> rather than Year 3. Investors and lenders should underwrite this as a <strong>multi-year, services-margin-driven business</strong>, not a fast-scaling volume play.</p>
+    </section>
+
+    <section id="sec2">
+      <p class="sec-eyebrow">&sect;2</p>
+      <h2>Singapore Pet Industry Analysis</h2>
+      <hr class="sec-rule"/>
+
+      <h3>2.1 &nbsp;Market Size &mdash; Reconciling Conflicting Figures</h3>
+      <p>No government agency publishes an official "pet market size" statistic; every number below comes from private syndicated research accessed via press releases or paywalled-report summaries, and each defines "pet market" differently. We present every figure found rather than picking one.</p>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Definition</th><th>Figure</th><th>Year</th><th>Confidence</th></tr></thead>
+        <tbody>
+          <tr><td>Singapore pet market (broad)</td><td class="num">US$78.0m (2016) &rarr; US$91.6m (2020) &rarr; ~US$110m (2025 est.)</td><td>2016&ndash;2025</td><td><span class="tag vs">Secondary</span> &middot; consistent across 2 sources</td></tr>
+          <tr><td>Pet care market (broad, incl. services)</td><td class="num">S$350&ndash;400m</td><td>2024 est.</td><td><span class="tag as">Secondary, unverified vs. primary</span></td></tr>
+          <tr><td>Pet care market forecast</td><td class="num">US$184.4m (+3.5% YoY)</td><td>2026</td><td><span class="tag vs">Secondary</span> &middot; GlobalPETS</td></tr>
+          <tr><td>Pet food revenue</td><td class="num">US$108.1m</td><td>2022</td><td><span class="tag vp">Primary-adjacent</span> &middot; US Dept. of Commerce</td></tr>
+          <tr><td>Pet healthcare market</td><td class="num">US$12.4m</td><td>2024</td><td><span class="tag vs">Secondary</span> &middot; named paid report</td></tr>
+          <tr><td>Companion animal health market</td><td class="num">US$166.1m by 2030</td><td>2030 forecast</td><td><span class="tag as">Low confidence</span> &mdash; page blocked on fetch</td></tr>
+          <tr><td>APAC pet care market (regional)</td><td class="num">US$29bn (2024)</td><td>2024</td><td><span class="tag vp">Verified</span> &middot; Euromonitor</td></tr>
+          <tr><td>SG average annual pet spend</td><td class="num">US$195/pet</td><td>2024</td><td><span class="tag vp">Verified</span> &middot; Euromonitor</td></tr>
+        </tbody>
+      </table></div>
+      <p><strong>Working range for this report: US$100&ndash;200 million</strong> (product/food-focused definition) <strong>up to S$350&ndash;400 million</strong> (broad, services-inclusive definition). Any investor deck should state which definition is being used.</p>
+
+      <h3>2.2 &nbsp;CAGR / Growth Forecast</h3>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Segment</th><th>CAGR</th><th>Period</th></tr></thead>
+        <tbody>
+          <tr><td>Pet care (overall)</td><td class="num">6.8%</td><td>2026&ndash;2032</td></tr>
+          <tr><td>Pet care (alternate estimate)</td><td class="num">~4.6%</td><td>2025&ndash;2030</td></tr>
+          <tr><td>Pet products</td><td class="num">3.53%</td><td>to 2030</td></tr>
+          <tr><td>Pet services</td><td class="num">8.63%</td><td>2026&ndash;2033</td></tr>
+          <tr><td>Companion animal health</td><td class="num">11%</td><td>to 2030</td></tr>
+          <tr><td>APAC pet care (regional benchmark)</td><td class="num">4%</td><td>2024&ndash;2029</td></tr>
+        </tbody>
+      </table></div>
+      <p><strong>Interpretation:</strong> CAGR clusters at 3.5&ndash;7% for product/food categories and 8&ndash;11% for services and healthcare &mdash; the single most important strategic signal in this report: <strong>the growth is in services, not shelf goods.</strong></p>
+
+      <h3>2.3 &nbsp;Pet Ownership</h3>
+      <ul>
+        <li><strong>32&ndash;34%</strong> of Singapore's population owns a pet (2024) <span class="tag vs">VERIFIED &middot; SECONDARY</span>, consistent with an earlier 2022 Statista survey (33%).</li>
+        <li>Cats are the primary pet for ~51% of pet-owning respondents vs. dogs ~28% in one survey cut &mdash; suggesting cat-focused retail may be under-indexed relative to actual ownership.</li>
+        <li><strong>Dog population ~114,000 (2023)</strong>, up from ~70,000 in 2019; <strong>cat population ~94,000 (2023)</strong> <span class="tag vs">VERIFIED &middot; SECONDARY, once-removed citation</span>.</li>
+        <li><strong>Cat licensing (primary data)</strong>: <strong>~41,000 pet cats licensed</strong> one year after the Cat Management Framework launched (Sept 2025), ~95&ndash;97% sterilised, 8,000+ microchipped <span class="tag vp">VERIFIED &middot; PRIMARY, NParks</span>.</li>
+        <li><strong>Do not use</strong>: a widely-circulated claim of "152,000 licensed cats in 2023" is internally impossible (the scheme didn't exist until Sept 2024) &mdash; excluded from this report as likely fabricated.</li>
+        <li><strong>Welfare stress indicator</strong>: SPCA recorded <strong>961 animal cruelty &amp; welfare cases in 2024</strong>, the highest in 12 years <span class="tag vp">VERIFIED &middot; PRIMARY, SPCA</span>.</li>
+      </ul>
+
+      <h3>2.4 &nbsp;Premium Pet Market</h3>
+      <ul>
+        <li>Premium dry dog food = <strong>87.3%</strong> of dry dog food sales (2020 baseline) &mdash; Singapore's dog food market is already heavily premiumized.</li>
+        <li><strong>144 new pet food products</strong> launched in Singapore in 2023 alone.</li>
+        <li>Pet insurance active since 2014 (Liberty Insurance); AON Happy Tails, CIMB My Paw Pal, TIQ, and MSIG's new "PawEasy" (cashless direct-to-vet claims) compete today. No SG-specific market-size figure found <span class="tag as">gap</span>.</li>
+      </ul>
+
+      <h3>2.5 &nbsp;Online vs. Offline</h3>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Channel metric</th><th>Figure</th><th>Year</th></tr></thead>
+        <tbody>
+          <tr><td>Pet shops/superstores share of sales</td><td class="num">51.7%</td><td>2020</td></tr>
+          <tr><td>Grocery retailers share</td><td class="num">22.4%</td><td>2020</td></tr>
+          <tr><td>E-commerce CAGR</td><td class="num">26.0%</td><td>2016&ndash;2020</td></tr>
+          <tr><td>Pet owners shopping online for pet food</td><td class="num">45%</td><td>2025</td></tr>
+          <tr><td>Began buying online during COVID</td><td class="num">85%</td><td>pandemic-era</td></tr>
+        </tbody>
+      </table></div>
+      <p>Shopee and Lazada dominate pet-product e-commerce; TikTok Shop and subscription boxes are the fastest-growing edge. <strong>Note:</strong> "Zigly," sometimes referenced as a Singapore online pet retailer, is actually India-based with no Singapore operations. Real Singapore online-native comparables are <strong>Smartpaw, Kohepets, JEPetz, and Polypet</strong>.</p>
+
+      <h3>2.6 &nbsp;Future Outlook (2026&ndash;2030)</h3>
+      <p>The consistent narrative: Singapore's pet population is plateauing (housing policy, small land area), so value growth through 2030 will come from (1) <strong>premiumization</strong> of existing households, (2) <strong>services attach-rate growth</strong> (8&ndash;11% CAGR vs. 3.5&ndash;7% for goods), (3) <strong>formalization of the cat-owning population</strong> under the new licensing framework, and (4) <strong>omnichannel maturity</strong> &mdash; a store-only model is a shrinking-relevance format by 2030.</p>
+    </section>
+
+    <section id="sec3">
+      <p class="sec-eyebrow">&sect;3</p>
+      <h2>Consumer Analysis</h2>
+      <hr class="sec-rule"/>
+
+      <h3>3.1 &nbsp;Customer Personas</h3>
+      <p><span class="tag md">MODELLED ESTIMATE</span> &mdash; synthesized from verified survey/demographic inputs in &sect;2 and &sect;5, not a proprietary primary-research panel.</p>
+
+      <h4>Persona 1 &mdash; The Affluent Empty-Nester Dog Owner</h4>
+      <p>40s&ndash;60s, landed/private property in Bukit Timah, Serangoon, or East Coast, household income S$15k+/month. Buys premium/prescription diets, uses professional grooming regularly, likely already pet-insured, low price sensitivity. <em>Pain point:</em> incumbents feel mass-market/impersonal; premium entrants are Orchard/city-centric and less convenient.</p>
+
+      <h4>Persona 2 &mdash; The Young Dual-Income HDB Cat Parent</h4>
+      <p>Late 20s&ndash;30s, HDB flat in Punggol/Sengkang/Tampines, newly licensed cat owner, household income S$8&ndash;10k/month. Price-conscious but pays for convenience; active on TikTok/Instagram. <em>Pain point:</em> confusion over new licensing rules; wants a trusted source for compliance guidance plus product.</p>
+
+      <h4>Persona 3 &mdash; The Multi-Pet Value Shopper</h4>
+      <p>HDB in Woodlands/Yishun/Jurong East, larger household, may own multiple pet types, income S$6&ndash;8k/month. Highly price-sensitive on staples, cross-shops Shopee/Lazada aggressively, but visits physical stores for advice on less common pets. <em>Pain point:</em> premium products feel prohibitive; wants loyalty/bulk discounts.</p>
+
+      <h4>Persona 4 &mdash; The First-Time Pet Owner</h4>
+      <p>Mixed age/income, newly acquired a pet, low product knowledge. Needs hand-holding on food, vaccination, licensing/microchipping paperwork. <em>Pain point:</em> overwhelmed by SKU choice, anxious about doing it right &mdash; a major upsell opportunity for a knowledgeable boutique format.</p>
+
+      <h3>3.2 &nbsp;Spending Behaviour</h3>
+      <ul>
+        <li>Cited annual spend: <strong>~US$2,700/yr on dog food, ~US$2,100/yr on cat food</strong> per pet-owning household <span class="tag as">indicative only</span>.</li>
+        <li>96% of consumers say they'd pay more for brand transparency <span class="tag as">unverified sample/methodology</span>.</li>
+        <li>52% now expect same-day delivery <span class="tag as">same caveat</span>.</li>
+        <li>44% use professional grooming services; 43% regularly buy grooming/hygiene products <span class="tag vs">VERIFIED &middot; SECONDARY</span>.</li>
+      </ul>
+
+      <h3>3.3 &nbsp;Purchase Journey</h3>
+      <ol>
+        <li><strong>Awareness</strong> &mdash; social media, word-of-mouth in condo/HDB pet-owner groups, vet referral.</li>
+        <li><strong>Research</strong> &mdash; online reviews, brand sites, price comparison across marketplaces.</li>
+        <li><strong>First purchase</strong> &mdash; online for staples; in-store for advice-heavy categories (starter kits, health items, grooming).</li>
+        <li><strong>Repeat purchase</strong> &mdash; subscription/reorder online for staples; in-store for grooming, vet visits, new-product discovery.</li>
+        <li><strong>Loyalty</strong> &mdash; membership app, personalized offers, community events.</li>
+      </ol>
+
+      <h3>3.4 &nbsp;Pain Points (Aggregate)</h3>
+      <ul>
+        <li>Confusion around new cat licensing/microchipping compliance &mdash; an opportunity for in-store advisory service.</li>
+        <li>High price of premium/prescription diets relative to mass-market income segments.</li>
+        <li>Fragmented experience &mdash; buying food online but needing in-person grooming/vet care creates channel-switching friction.</li>
+        <li>Trust deficit around ingredient sourcing/transparency.</li>
+        <li>Limited HDB living space constrains large-breed ownership and bulky-product storage &mdash; favours smaller packaging and delivery.</li>
+      </ul>
+    </section>
+
+    <section id="sec4">
+      <p class="sec-eyebrow">&sect;4</p>
+      <h2>Competitor Analysis</h2>
+      <hr class="sec-rule"/>
+      <p><strong>Correction to common brief assumptions:</strong> several names often circulated in pet-retail scan templates do <strong>not</strong> appear to operate in Singapore. We verified this directly:</p>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Name</th><th>Finding</th></tr></thead>
+        <tbody>
+          <tr><td>QT Pet Supplies</td><td>Not found in Singapore &mdash; only same-named businesses in Ipoh, Malaysia and Hanoi, Vietnam</td></tr>
+          <tr><td>PetHouz / Pet Haus</td><td>Not found &mdash; "Oyen PetHouz" is Petaling Jaya, Malaysia</td></tr>
+          <tr><td>Absolute Pets</td><td>Singapore has only "Absolute Bites/Plus" as product brands; the retail chain is South African</td></tr>
+          <tr><td>Zigly</td><td>India-based online pet retailer; no SG operations</td></tr>
+          <tr><td>Ohmypawtatoes / element pet store / Just Dogs / Bark Avenue / PetCulture / Pawrade</td><td>None verified as existing Singapore retail chains</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>4.1 &nbsp;Pet Lovers Centre (PLC) &mdash; Market Leader</h3>
+      <div class="tablewrap"><table>
+        <tbody>
+          <tr><th>Founded</th><td>1973, family-run (Ng Whye Hoe, Group MD)</td></tr>
+          <tr><th>SG footprint</th><td class="num">Est. 60&ndash;70 outlets <span class="cite">(range not precisely confirmable)</span></td></tr>
+          <tr><th>Regional footprint</th><td class="num">~160&ndash;165 stores &mdash; Singapore, Malaysia (~66&ndash;67), Thailand (~21&ndash;26), Philippines (11+)</td></tr>
+          <tr><th>Format</th><td>Malls + heartland</td></tr>
+          <tr><th>Product mix</th><td>Full range; owns private labels <strong>Trustie</strong> (accessories, since 1980) and <strong>Burp!</strong> (food, since 1996)</td></tr>
+          <tr><th>Services</th><td>Grooming, vet clinics, boarding, training, cremation, pet taxi, moving, bakery</td></tr>
+          <tr><th>Pricing</th><td>Mass-to-mid market</td></tr>
+        </tbody>
+      </table></div>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Strengths</th><th>Weaknesses</th></tr></thead>
+        <tbody><tr><td>Unmatched scale &amp; density; full vertical (retail+vet+grooming+boarding); strong private-label margin capture</td><td>Mass-market brand image may not resonate with premiumizing, brand-conscious affluent segment</td></tr></tbody>
+        <thead><tr><th>Opportunities</th><th>Threats</th></tr></thead>
+        <tbody><tr><td>Regional expansion (Philippines, Thailand) funds further SG investment</td><td>Premium entrants (HUFT) and boutique specialists chip away at the higher-margin top of the market</td></tr></tbody>
+      </table></div>
+
+      <h3>4.2 &nbsp;Superpets &mdash; Mass-Market Challenger</h3>
+      <p>Founded 2015; <strong>18&ndash;19 outlets</strong> islandwide, two operating <strong>24/7</strong> (Jalan Kayu; Chong Pang) &mdash; first 24-hour physical pet retail in Singapore. Mass-market/affordable; flat S$20 24-hour express delivery. <em>Strength:</em> convenience/availability. <em>Weakness:</em> price-led positioning limits margin.</p>
+
+      <h3>4.3 &nbsp;Pets&rsquo; Station</h3>
+      <p>Family business since 1969, retail since 1990. <strong>6&ndash;7 outlets</strong>, all mall-based heartland locations (Bukit Panjang Plaza, Causeway Point, Compass One, Jurong Point, Oasis Terraces, Serangoon Gardens). Carries 10,000+ products including the <strong>Browns</strong> product line. Mid-market positioning.</p>
+
+      <h3>4.4 &nbsp;CatSmart &amp; Pet Master Mega Store &mdash; Cat/Mega-Format Specialists</h3>
+      <p><strong>CatSmart</strong>: 20+ years, <strong>5 outlets</strong> (Upper Thomson/Jalan Leban flagship, Loyang Point, Bukit Batok, Sembawang), 400+ brands, Straits Times Best Customer Service 2023/24. <strong>Pet Master Mega Store</strong> (East Coast Park): "Singapore's largest pet lifestyle concept store," 5,000+ sq ft, water playground, DIY grooming rooms, on-site caf&eacute; &mdash; branded jointly with CatSmart. <em>Relevance:</em> East Coast is already "claimed" by large-format experiential players.</p>
+
+      <h3>4.5 &nbsp;Heads Up For Tails (HUFT) &mdash; Premium New Entrant <span class="tag vs" style="margin-left:0.4em;">key signal</span></h3>
+      <p>India-origin premium brand (est. 2008); <strong>first Singapore store May 2024</strong>, expanded to a <strong>4th store (Wheelock Place, Orchard Rd) by 2026</strong>. Explicitly positioned as a challenger to the mass-market leader, targeting the high-income segment; Singapore and the UAE are HUFT's only direct-retail international markets. ~500 sq ft format, 1,000+ SKUs, designer accessories, organic grooming, in-store spa.</p>
+      <p><strong>This is the most important comparable in this report</strong>: HUFT's rapid 4-store expansion in under 2 years is direct market evidence that a premium, differentiated positioning against Pet Lovers Centre works commercially in Singapore.</p>
+
+      <h3>4.6 &nbsp;Boutique / Lifestyle Players</h3>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Company</th><th>Positioning</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Vanillapup</td><td>Premium curated</td><td>Cluny Court, myVillage</td></tr>
+          <tr><td>Ginger and Bear</td><td>Boutique curated</td><td>Premium treats/toys/accessories</td></tr>
+          <tr><td>CreatureLand</td><td>Premium</td><td>Midview City; free delivery above S$68</td></tr>
+          <tr><td>Good Dog People</td><td>Sustainability/zero-waste, online</td><td>~1,000 five-star reviews</td></tr>
+          <tr><td>Neko Neko / Neko Jam</td><td>Cat-only specialist</td><td>5 physical locations + online arm</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>4.7 &nbsp;Online-Native Players</h3>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Company</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Kohepets</td><td>Online since 2011; 18,000+ products, 300+ brands</td></tr>
+          <tr><td>Polypet</td><td>Founded 2004; Clementi retail + online; 15,000+ products; adoption advocacy</td></tr>
+          <tr><td>Pawpy Kisses</td><td>Balestier Rd; online + grooming salon; raw food focus; sells via own site + Shopee + Lazada</td></tr>
+          <tr><td>Petico (acquired Perromart SG, 2023)</td><td>Malaysian retailer's first SG entry via acquisition; parent operates 12 stores in Malaysia</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>4.8 &nbsp;Cat Caf&eacute;s / Experience Retail</h3>
+      <p><strong>Neko no Niwa</strong>, Singapore's pioneering cat caf&eacute; (Boat Quay, ~2013), <strong>permanently closed 1 May 2022</strong> after 8 years &mdash; a notable market exit worth noting for risk purposes. Currently active: The Cat Caf&eacute; (Victoria St), Catmosphere (Desker Rd), Nekotown (Geylang Rd), Meomi Cat Caf&eacute; (since 2014). These are experience/F&amp;B-led concepts (entry fee model) rather than retail-first businesses.</p>
+
+      <h3>4.9 &nbsp;Competitive Landscape Summary</h3>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Tier</th><th>Players</th><th>Implication for New Entrant</th></tr></thead>
+        <tbody>
+          <tr><td>Mass-market, full-service</td><td>Pet Lovers Centre, Superpets</td><td>Avoid head-on competition; cannot match scale/pricing</td></tr>
+          <tr><td>Mid-market, heartland</td><td>Pets&rsquo; Station</td><td>Moderate threat in mall-anchored heartland locations</td></tr>
+          <tr><td>Cat specialist / mega-format</td><td>CatSmart, Pet Master Mega Store</td><td>Strong in cat category and experiential retail; differentiate via curation or under-served category</td></tr>
+          <tr><td>Premium new entrant</td><td>Heads Up For Tails</td><td>Validates premium positioning; direct competitor in the same affluent segment/city-fringe locations</td></tr>
+          <tr><td>Boutique/curated</td><td>Vanillapup, Ginger and Bear, CreatureLand</td><td>Closest positioning peers; differentiate via location, service, or category focus</td></tr>
+          <tr><td>Online-native</td><td>Kohepets, Polypet, Pawpy Kisses, Petico</td><td>Sets the price/convenience floor for commodity SKUs</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section id="sec5">
+      <p class="sec-eyebrow">&sect;5</p>
+      <h2>Store Location Analysis</h2>
+      <hr class="sec-rule"/>
+      <p><strong>Methodology:</strong> population and housing-type figures are drawn from Singapore's Census of Population 2020 (SingStat/data.gov.sg) plus 2025 mid-year estimates. Household income is computed from the same 2020 Census table; absolute dollar levels are ~20&ndash;25% below 2025 nominal levels, but relative area rankings should be broadly stable. "Katong," "East Coast," and "Orchard" are not themselves official Census planning areas.</p>
+
+      <h3>5.1 &nbsp;Comparative Table &mdash; All 16 Locations</h3>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Area</th><th>Pop. (2025)</th><th>% HDB</th><th>% Landed</th><th>Income band</th><th>MRT access</th><th>Density</th><th>Growth driver</th></tr></thead>
+        <tbody>
+          <tr><td>Tampines</td><td class="num">290,090</td><td class="num">87.1%</td><td class="num">1.7%</td><td class="num">S$8&ndash;9k</td><td>EWL/DTL</td><td>Moderate</td><td>Tampines North / CRL</td></tr>
+          <tr><td>Punggol</td><td class="num">204,150</td><td class="num">86.9%</td><td class="num">0.2%</td><td class="num">S$9&ndash;10k</td><td>NEL+LRT</td><td>Moderate</td><td>Punggol Digital District</td></tr>
+          <tr><td>Bishan</td><td class="num">87,530</td><td class="num">68.0%</td><td class="num">11.9%</td><td class="num">S$9&ndash;10k</td><td>NSL/CCL</td><td>Low&ndash;moderate</td><td>Stable, mature &mdash; white space</td></tr>
+          <tr><td>Bukit Timah</td><td class="num">85,900</td><td class="num">9.0%</td><td class="num">42.1%</td><td class="num">S$15&ndash;17.5k</td><td>DTL nearby</td><td>Moderate&ndash;high</td><td>Stable, affluent, land-scarce</td></tr>
+          <tr><td>Serangoon</td><td class="num">116,630</td><td class="num">54.7%</td><td class="num">30.6%</td><td class="num">S$9&ndash;10k</td><td>NEL/CCL</td><td>High</td><td>Stable, mature</td></tr>
+          <tr><td>Novena</td><td class="num">53,160</td><td class="num">44.1%</td><td class="num">15.7%</td><td class="num">S$9&ndash;10k</td><td>NSL</td><td>Low &mdash; white space</td><td>Medical-hub daytime footfall</td></tr>
+          <tr><td>Katong (Marine Parade subzone)</td><td class="num">9,360 dwellings</td><td class="num">0%</td><td class="num">44.6%</td><td>n/a</td><td>TEL (2024)</td><td>High</td><td>TEL accessibility catalyst</td></tr>
+          <tr><td>East Coast (Frankel/Siglap/Mountbatten)</td><td>mixed subzones</td><td class="num">0%</td><td class="num">~50% avg</td><td>n/a</td><td>TEL (2024)</td><td>High (megastores)</td><td>Greater Southern Waterfront (2040+)</td></tr>
+          <tr><td>Jurong East</td><td class="num">72,950</td><td class="num">90.3%</td><td class="num">0%</td><td class="num">S$6&ndash;7k</td><td>EWL/NSL</td><td>High</td><td>Jurong Lake District &mdash; largest driver</td></tr>
+          <tr><td>Woodlands</td><td class="num">254,440</td><td class="num">92.5%</td><td class="num">0.3%</td><td class="num">S$7&ndash;8k</td><td>NSL/TEL</td><td>Low&ndash;moderate</td><td>Woodlands Regional Centre</td></tr>
+          <tr><td>Clementi</td><td class="num">104,240</td><td class="num">73.3%</td><td class="num">6.2%</td><td class="num">S$7&ndash;8k</td><td>EWL</td><td>Moderate</td><td>Steady, one-north proximity</td></tr>
+          <tr><td>Toa Payoh</td><td class="num">142,220</td><td class="num">82.3%</td><td class="num">4.6%</td><td class="num">S$5&ndash;6k</td><td>NSL</td><td>Moderate</td><td>Toa Payoh East + Bidadari</td></tr>
+          <tr><td>Orchard</td><td class="num">~1,450</td><td class="num">0%</td><td class="num">0%</td><td>n/a</td><td>NSL/TEL</td><td>Very low</td><td>Not a residential growth area</td></tr>
+          <tr><td>Marine Parade</td><td class="num">47,480</td><td class="num">42.1%</td><td class="num">20.0%</td><td class="num">S$8&ndash;9k</td><td>TEL (2024)</td><td>High</td><td>TEL + Greater Southern Waterfront</td></tr>
+          <tr><td>Yishun</td><td class="num">228,730</td><td class="num">88.1%</td><td class="num">2.6%</td><td class="num">S$6&ndash;7k</td><td>NSL</td><td>Moderate&ndash;high</td><td>Continued BTO pipeline</td></tr>
+          <tr><td>Sengkang</td><td class="num">267,600</td><td class="num">86.3%</td><td class="num">0.6%</td><td class="num">S$9&ndash;10k</td><td>NEL+LRT</td><td>Moderate</td><td>Continued BTO, young families</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>5.2 &nbsp;Rental Benchmarks (Islandwide Context)</h3>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Segment</th><th>Rate</th><th>Period</th></tr></thead>
+        <tbody>
+          <tr><td>HDB shop, privately sublet (median)</td><td class="num">S$7.34 psf/mo <span class="cite">(from S$3.51 in Q2 2024)</span></td><td>Q2 2025</td></tr>
+          <tr><td>Islandwide mall/prime retail (average)</td><td class="num">S$28.50 psf/mo (+2.5% YoY)</td><td>Q4 2025</td></tr>
+          <tr><td>Orchard Road prime</td><td class="num">S$31.70 psf/mo</td><td>Q4 2025</td></tr>
+          <tr><td>HDB clinic-designated tender rate</td><td class="num">S$10.40 &rarr; S$28.50 psf/mo</td><td>2020&rarr;H1 2025</td></tr>
+          <tr><td>2026 rent growth forecast</td><td class="num">+1&ndash;4% islandwide</td><td>2026</td></tr>
+        </tbody>
+      </table></div>
+      <p>No area-specific psf figure exists for neighbourhood mall units at the 800&ndash;1,500 sq ft size &mdash; this needs a live broker quote or HDB tender result once specific units are shortlisted. For modelling (&sect;10) we use <strong>S$9&ndash;12 psf/month</strong> for a heartland mall/HDB-shop-tier unit <span class="tag md">MODELLED ESTIMATE</span>.</p>
+
+      <h3>5.3 &nbsp;Location Scoring &amp; Ranking</h3>
+      <p><span class="tag md">MODELLED ESTIMATE</span> &mdash; weighted across Pet-Ownership Propensity (25%), Rental Cost-Efficiency (20%), Validated Demand/Competition Balance (20%), Accessibility (20%), Growth Potential (15%). Directional, not a proprietary statistical index.</p>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Rank</th><th>Area</th><th>Score</th><th>Rationale</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td><strong>Serangoon</strong></td><td><div class="scorebar"><div class="track"><div class="fill" style="width:84%"></div></div><span class="num">84</span></div></td><td>Best combination: proven demand cluster, above-average income, high landed share, major MRT interchange</td></tr>
+          <tr><td class="num">2</td><td><strong>Marine Parade / Katong</strong></td><td><div class="scorebar"><div class="track"><div class="fill" style="width:81%"></div></div><span class="num">81</span></div></td><td>High landed/income profile, brand-new MRT access (2024), established pet-retail cluster</td></tr>
+          <tr><td class="num">3</td><td><strong>Bishan</strong></td><td><div class="scorebar"><div class="track"><div class="fill" style="width:78%"></div></div><span class="num">78</span></div></td><td>High income, lowest existing pet-retail density among higher-income areas &mdash; genuine white space</td></tr>
+          <tr><td class="num">4</td><td>Sengkang</td><td><div class="scorebar"><div class="track"><div class="fill" style="width:74%"></div></div><span class="num">74</span></div></td><td>Young, growing, above-average-income family catchment; still-active BTO pipeline</td></tr>
+          <tr><td class="num">5</td><td>Punggol</td><td><div class="scorebar"><div class="track"><div class="fill" style="width:73%"></div></div><span class="num">73</span></div></td><td>Similar to Sengkang; Punggol Digital District adds daytime population</td></tr>
+          <tr><td class="num">6</td><td>Bukit Timah</td><td><div class="scorebar"><div class="track"><div class="fill" style="width:72%"></div></div><span class="num">72</span></div></td><td>Highest income/landed share but small static population; 3 competitors present</td></tr>
+          <tr><td class="num">7</td><td>Novena</td><td><div class="scorebar"><div class="track"><div class="fill" style="width:68%"></div></div><span class="num">68</span></div></td><td>Low competition, decent income, small residential population</td></tr>
+          <tr><td class="num">8</td><td>Tampines</td><td><div class="scorebar"><div class="track"><div class="fill" style="width:66%"></div></div><span class="num">66</span></div></td><td>Largest population = volume potential, moderate income, competition present</td></tr>
+          <tr><td class="num">9</td><td>East Coast</td><td><div class="scorebar"><div class="track"><div class="fill" style="width:64%"></div></div><span class="num">64</span></div></td><td>Landed-heavy, high-income, but already claimed by large-format experiential leaders</td></tr>
+          <tr><td class="num">10</td><td>Clementi</td><td><div class="scorebar"><div class="track"><div class="fill" style="width:60%"></div></div><span class="num">60</span></div></td><td>Balanced but unremarkable; no standout growth catalyst</td></tr>
+          <tr><td class="num">11</td><td>Toa Payoh</td><td><div class="scorebar"><div class="track"><div class="fill" style="width:57%"></div></div><span class="num">57</span></div></td><td>Lowest income today, meaningful redevelopment upside</td></tr>
+          <tr><td class="num">12</td><td>Jurong East</td><td><div class="scorebar"><div class="track"><div class="fill" style="width:55%"></div></div><span class="num">55</span></div></td><td>Lower income today, but the single largest long-term growth driver on this list</td></tr>
+          <tr><td class="num">13</td><td>Woodlands</td><td><div class="scorebar"><div class="track"><div class="fill" style="width:48%"></div></div><span class="num">48</span></div></td><td>Large population, lowest affluence tier &mdash; volume-over-margin only</td></tr>
+          <tr><td class="num">14</td><td>Yishun</td><td><div class="scorebar"><div class="track"><div class="fill" style="width:46%"></div></div><span class="num">46</span></div></td><td>Similar to Woodlands &mdash; large population, lowest income profile</td></tr>
+          <tr><td class="num">16</td><td><strong>Orchard</strong></td><td><div class="scorebar"><div class="track"><div class="fill" style="width:22%"></div></div><span class="num">22</span></div></td><td><strong>Not recommended</strong> &mdash; ~1,450 residents and highest rent in Singapore (S$31.70 psf)</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>5.4 &nbsp;Recommendation</h3>
+      <p>Open the flagship store in <strong>Serangoon or Katong/Marine Parade</strong>. Both combine validated demand, above-average household income, and a meaningful accessibility catalyst. <strong>Bishan is the strongest "second store" candidate</strong> given its high income and comparatively low existing pet-retail density.</p>
+    </section>
+
+    <section id="sec6">
+      <p class="sec-eyebrow">&sect;6</p>
+      <h2>Business Model Comparison</h2>
+      <hr class="sec-rule"/>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Model</th><th>Capex</th><th>Margin Profile</th><th>Key Advantage</th><th>Key Risk</th><th>Fit</th></tr></thead>
+        <tbody>
+          <tr><td>Traditional Pet Shop</td><td>Low&ndash;Med</td><td class="num">25&ndash;35%</td><td>Simple, wide customer base</td><td>Direct price war with PLC/Superpets</td><td><strong>Not recommended</strong></td></tr>
+          <tr><td>Premium Boutique</td><td>Medium</td><td class="num">45&ndash;55%</td><td>Differentiation, matches premiumization trend</td><td>Smaller addressable base</td><td>Strong, paired with services</td></tr>
+          <tr><td>Lifestyle Store</td><td>Med&ndash;High</td><td class="num">50&ndash;60%</td><td>Highest margin category, social-media hook</td><td>Lower repeat-purchase frequency</td><td>Complementary layer</td></tr>
+          <tr><td>Grooming + Retail</td><td>Medium</td><td class="num">Blended 40&ndash;55%</td><td>Recurring revenue, aligns with fastest-growing segment</td><td>Skilled groomer hiring/retention</td><td><strong>Primary recommended model</strong></td></tr>
+          <tr><td>Caf&eacute; + Retail</td><td>High</td><td class="num">60&ndash;70% F&amp;B, low net</td><td>Strong experiential/social draw</td><td>Neko no Niwa's 2022 closure is a caution; SFA compliance layer</td><td>Later-stage addition only</td></tr>
+          <tr><td>Hybrid Online + Offline</td><td>Medium (+S$8&ndash;15k)</td><td>Improves blended margin</td><td>Matches ~45% online reality; delivery/subscription revenue</td><td>Requires real digital marketing competence</td><td><strong>Mandatory layer</strong></td></tr>
+        </tbody>
+      </table></div>
+      <p><strong>Recommended combination: Premium Boutique + Grooming, delivered Hybrid Online + Offline from day one.</strong> This avoids commodity price competition, captures the market's fastest-growing segment, matches HUFT's demonstrated success pattern, and builds in the omnichannel resilience the data shows is now table stakes. Treat a <strong>Lifestyle</strong> merchandising layer and a <strong>Caf&eacute;</strong> element as Year 2&ndash;3 expansion options, not Day-1 commitments.</p>
+    </section>
+
+    <section id="sec7">
+      <p class="sec-eyebrow">&sect;7</p>
+      <h2>Product Strategy</h2>
+      <hr class="sec-rule"/>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Category</th><th>Recommended Brands (SG)</th><th>Price (SGD)</th><th>Margin</th><th>Demand</th><th>Stock Rec.</th></tr></thead>
+        <tbody>
+          <tr><td>Dogs &mdash; premium dry food</td><td>Royal Canin, Orijen/Acana</td><td class="num">$60&ndash;150</td><td class="num">25&ndash;35%</td><td>High</td><td>Core; deepest SKU range</td></tr>
+          <tr><td>Dogs &mdash; raw/freeze-dried</td><td>K9 Natural</td><td class="num">$40&ndash;120</td><td class="num">30&ndash;40%</td><td>Growing</td><td>Moderate; cold-chain handling</td></tr>
+          <tr><td>Cats &mdash; premium food &amp; litter</td><td>Feline Natural, Wellness</td><td class="num">$25&ndash;90</td><td class="num">25&ndash;35%</td><td><strong>Highest growth potential</strong></td><td>Prioritise breadth over dog category</td></tr>
+          <tr><td>Fish/aquatics</td><td>Multi-brand</td><td class="num">$10&ndash;200</td><td class="num">35&ndash;55%</td><td>Niche, sticky</td><td>Light footprint; expertise differentiator</td></tr>
+          <tr><td>Birds</td><td>Multi-brand</td><td class="num">$10&ndash;80</td><td class="num">30&ndash;45%</td><td>Niche</td><td>Minimal shelf space</td></tr>
+          <tr><td>Small animals</td><td>Multi-brand</td><td class="num">$15&ndash;100</td><td class="num">30&ndash;45%</td><td>Moderate</td><td>Compliance-advisory opportunity (e-PPD)</td></tr>
+          <tr><td>Premium/functional nutrition</td><td>Royal Canin vet diets, Orijen/Acana</td><td class="num">$50&ndash;180</td><td class="num">30&ndash;40%</td><td>High, growing</td><td>Core differentiator vs. mass incumbents</td></tr>
+          <tr><td>Smart devices/pet tech</td><td>No dominant SG brand</td><td class="num">$30&ndash;300</td><td class="num">35&ndash;50%</td><td>Emerging</td><td>Small curated selection; test-and-learn</td></tr>
+          <tr><td>Grooming (service)</td><td>In-house</td><td class="num">$40&ndash;150/session</td><td class="num">50&ndash;60%</td><td>High</td><td>Primary recurring-revenue driver</td></tr>
+          <tr><td>Grooming (retail products)</td><td>zee.dog/zee.cat, Bass Brushes, Dom&amp;Cleo</td><td class="num">$15&ndash;60</td><td class="num">40&ndash;50%</td><td>High</td><td>Bundle with appointments</td></tr>
+          <tr><td>Health/wellness/supplements</td><td>Multi-brand, insurer referrals</td><td class="num">$20&ndash;100</td><td class="num">30&ndash;40%</td><td>Growing</td><td>Consider insurer referral partnership</td></tr>
+          <tr><td>Toys</td><td>Multi-brand curated</td><td class="num">$8&ndash;50</td><td class="num">45&ndash;60%</td><td>Steady, impulse</td><td>High-margin checkout category</td></tr>
+          <tr><td>Accessories</td><td>zee.dog, Rodipet</td><td class="num">$15&ndash;80</td><td class="num">45&ndash;60%</td><td>Steady&ndash;high</td><td>Highest-margin non-consumable</td></tr>
+          <tr><td>Seasonal collections</td><td>Curated/private label potential</td><td class="num">$15&ndash;60</td><td class="num">50&ndash;65%</td><td>Event-driven</td><td>Small, high-turnover drops</td></tr>
+        </tbody>
+      </table></div>
+      <p><strong>Category strategy:</strong> weight inventory toward <strong>cat products</strong> (under-indexed, growing, formally expanding) and <strong>grooming-adjacent retail</strong> (highest margin, ties to the recommended model), keeping fish/bird/small-animal categories deliberately light-footprint &mdash; used for advisory differentiation, not volume.</p>
+    </section>
+
+    <section id="sec8">
+      <p class="sec-eyebrow">&sect;8</p>
+      <h2>Supplier Analysis</h2>
+      <hr class="sec-rule"/>
+      <h3>8.1 &nbsp;Local Distributors/Wholesalers</h3>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Distributor</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Silversky Pets</td><td>&gt;10 years in SG; services 260+ retailers</td></tr>
+          <tr><td>Howlistic Life</td><td>SG distributor for K9 Natural, Feline Natural, zee.dog/zee.cat, Bass Brushes, Dom&amp;Cleo, Rodipet</td></tr>
+          <tr><td>Pets Pacific</td><td>Bulk/per-kilo distributor</td></tr>
+          <tr><td>Rifavest</td><td>Distributor for Furkids, Hooman</td></tr>
+          <tr><td>DP Pets Co.</td><td>17+ curated brands</td></tr>
+          <tr><td>B2K Pet</td><td>One of SG's largest pet distributors (self-reported)</td></tr>
+          <tr><td>SG Pets Pte Ltd</td><td>Pet food distributor/wholesaler</td></tr>
+        </tbody>
+      </table></div>
+      <p><em>All company-site claims are self-reported, not third-party verified &mdash; confirm commercial terms directly before committing.</em></p>
+
+      <h3>8.2 &nbsp;International Brands with Confirmed SG Presence</h3>
+      <p><strong>Royal Canin Singapore Pte Ltd</strong> (registered entity, Scotts Road); <strong>Nestl&eacute; Purina PetCare</strong> (Asia/Oceania/Africa regional HQ based in Singapore); <strong>Orijen/Acana</strong> (via K9Artefacts, retailed via Pawpy Kisses). Hill's Pet Nutrition, Mars Petcare, and Ziwi have SG-market presence but no independently verified local distributor entity &mdash; <span class="tag as">gap, confirm before exclusivity talks</span>.</p>
+
+      <h3>8.3 &nbsp;OEM / Private Label Manufacturing</h3>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Region</th><th>Manufacturer</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Thailand</td><td>Gambol Pet Food</td><td>16 factories, &gt;182,000 t/yr, OEM&rarr;brand owner</td></tr>
+          <tr><td>Thailand</td><td>Bluefalo Petcare</td><td>20+ years, 3 factories incl. wet food/treats line</td></tr>
+          <tr><td>Thailand</td><td>Betagro Pet</td><td>Major Thai agri-food conglomerate OEM arm</td></tr>
+          <tr><td>Malaysia</td><td>Emma Kitchen</td><td>Low MOQ, no monthly commitment</td></tr>
+          <tr><td>China</td><td>BZY PET, DF Pet Food</td><td>Flexible/low MOQ (marketed as low as ~50 units)</td></tr>
+        </tbody>
+      </table></div>
+      <p><span class="tag as">Industry benchmark, not SG-verified</span> &mdash; dry kibble MOQ 20,000&ndash;40,000 lbs/run; wet/canned 1&ndash;2 truckloads; raw/freeze-dried 5,000&ndash;10,000 lbs; treats often 10,000 lbs min. Typical lead time 2&ndash;4 weeks post-formulation.</p>
+      <p><strong>Recommendation:</strong> start private-label ambitions with <strong>accessories/toys/grooming products</strong> (lower MOQ, less regulatory complexity) via a China or Malaysia OEM, keeping food third-party branded until sales history justifies a food-grade private-label commitment.</p>
+    </section>
+
+    <section id="sec9">
+      <p class="sec-eyebrow">&sect;9</p>
+      <h2>Licensing &amp; Legal Requirements</h2>
+      <hr class="sec-rule"/>
+      <p><strong>Agency structure correction:</strong> AVS (Animal &amp; Veterinary Service) is a department of <strong>NParks</strong>, not SFA &mdash; since the April 2019 AVA split, food-safety went to SFA while all animal/pet-shop licensing stayed with AVS under NParks.</p>
+
+      <h3>9.1 &nbsp;Company Registration (ACRA)</h3>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Item</th><th>Cost</th><th>Timeline</th></tr></thead>
+        <tbody>
+          <tr><td>Pte Ltd (name + incorporation, Bizfile)</td><td class="num">S$315</td><td>1&ndash;3 business days</td></tr>
+          <tr><td>Sole proprietorship/partnership (1-yr)</td><td class="num">~S$115</td><td>Similar</td></tr>
+          <tr><td>Annual returns filing (company)</td><td class="num">S$60/yr</td><td>&mdash;</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>9.2 &nbsp;AVS Pet Shop Licence (if selling live animals)</h3>
+      <p>Requires compulsory pet-welfare training (AVS-recognised provider), URA change-of-use if applicable, layout plans (cages, quarantine, exercise area, food prep, wash area, ventilation, waste), and an AVS premises inspection.</p>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Fee</th><th>Amount</th></tr></thead>
+        <tbody>
+          <tr><td>Application + Licence</td><td class="num">S$94.50 + S$126.00 = S$220.50/yr</td></tr>
+          <tr><td>Retail Group Pet Licence (&le;10 animals)</td><td class="num">S$50/yr</td></tr>
+          <tr><td>Retail Group Pet Licence (101&ndash;200 animals)</td><td class="num">S$1,000/yr</td></tr>
+        </tbody>
+      </table></div>
+      <p>Approval timeline ~3 working days once inspection/payment complete. Species-specific conditions apply for dogs/cats, small mammals, birds, fancy fish. Since 1 Nov 2025, rabbit buyers must complete an e-PPD via SingPass.</p>
+
+      <h3>9.3 &nbsp;Import Permits</h3>
+      <p>AVS licence required for import/export/transship of non-food animals, birds, eggs, biologics (valid 90 days) &mdash; exact fee <span class="tag as">unconfirmed, verify with AVS</span>. Separate licence for ornamental fish. CITES permits required for exotic/endangered species. Whether pure resale of imported packaged pet food triggers an SFA feed-licence obligation was <span class="tag as">not conclusively confirmed</span>.</p>
+
+      <h3>9.4 &nbsp;GST (IRAS)</h3>
+      <p>Current rate <strong>9%</strong> (since 1 Jan 2024). Compulsory registration threshold: taxable turnover <strong>&gt;S$1 million</strong>. Given &sect;10 projects Year 3 revenue ~S$1.1&ndash;1.2M, plan GST registration around <strong>Year 2&ndash;3</strong>.</p>
+
+      <h3>9.5 &nbsp;Employment</h3>
+      <p><strong>Progressive Wage Model (Retail)</strong>, effective 1 Sept 2025: Retail Assistant/Cashier S$2,305&rarr;S$2,565 by 2027; Senior Retail Assistant S$2,535&rarr;S$2,820; Assistant Retail Supervisor S$2,790&rarr;S$3,100. <strong>CPF employer contribution (from 1 Jan 2026): 17%</strong> for employees &le;55 (total employer+employee 37%); OW ceiling rises to S$8,000/month. Foreign Work Permit (Services sector): Dependency Ratio Ceiling 35%; levy S$300&ndash;950/month.</p>
+
+      <h3>9.6 &nbsp;Insurance</h3>
+      <p><strong>Work Injury Compensation Insurance (WICA)</strong> is the one legally compulsory policy. Public liability, fire/property, and business-interruption insurance are commercially recommended, not mandatory.</p>
+
+      <h3>9.7 &nbsp;Other Required Approvals</h3>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Approval</th><th>Fee</th><th>Timeline</th><th>When needed</th></tr></thead>
+        <tbody>
+          <tr><td>URA Change of Use</td><td class="num">S$500</td><td>~10 working days</td><td>Converting premises use</td></tr>
+          <tr><td>Signboard licence</td><td>Varies</td><td>Town Council consent</td><td>All storefronts</td></tr>
+          <tr><td>SCDF Fire/Fire Safety Certificate</td><td>Varies</td><td>Parallel to fit-out</td><td>All retail premises</td></tr>
+          <tr><td>SFA Food Shop Licence</td><td class="num">S$195/yr</td><td>~7 working days</td><td>Only if adding caf&eacute;/F&amp;B</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>9.8 &nbsp;Consolidated Cost &amp; Timeline</h3>
+      <p><strong>Total regulatory fees (excl. professional/fit-out costs): ~S$1,300&ndash;1,500.</strong> <span class="tag md">MODELLED ESTIMATE</span> Realistic timeline, incorporation &rarr; store opening: <strong>roughly 2&ndash;4 months</strong>, driven mainly by fit-out works, URA sequencing, and AVS inspection &mdash; not by the fees themselves.</p>
+      <p><strong>Compliance gaps flagged for direct follow-up:</strong> (1) AVS import/export licence fee for live animals/biologics; (2) whether pure resale of imported pet food triggers SFA feed-licensing; (3) confirmation of WICA's statutory basis against the primary Act text.</p>
+    </section>
+
+    <section id="sec10">
+      <p class="sec-eyebrow">&sect;10</p>
+      <h2>Financial Analysis</h2>
+      <hr class="sec-rule"/>
+      <p><span class="tag md">MODELLED ESTIMATE</span> &mdash; no publicly available Singapore-specific "pet retail P&amp;L" benchmark exists. Built bottom-up from Singapore-specific rental/wage/CPF/fit-out/licensing figures (&sect;5, &sect;9) combined with industry-standard specialty-retail margins (35&ndash;50%) and inventory-turnover norms (6&ndash;12x/yr) as the closest available proxy. Base case: <strong>1,000&ndash;1,200 sq ft</strong>, Serangoon/Katong-tier location, Premium Boutique + Grooming + Hybrid model.</p>
+
+      <h3>10.1 &nbsp;Startup Investment &mdash; Three Scenarios</h3>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Line item</th><th>Best Case</th><th>Expected Case</th><th>Worst Case</th></tr></thead>
+        <tbody>
+          <tr><td>Store size</td><td class="num">800 sq ft</td><td class="num">1,200 sq ft</td><td class="num">1,500 sq ft</td></tr>
+          <tr><td>Fit-out/renovation</td><td class="num">S$80,000</td><td class="num">S$180,000</td><td class="num">S$300,000</td></tr>
+          <tr><td>Initial inventory</td><td class="num">S$60,000</td><td class="num">S$100,000</td><td class="num">S$150,000</td></tr>
+          <tr><td>Rental deposit (3 mo)</td><td class="num">S$20,000</td><td class="num">S$36,000</td><td class="num">S$67,500</td></tr>
+          <tr><td>Professional/permit fees</td><td class="num">S$6,000</td><td class="num">S$10,000</td><td class="num">S$15,000</td></tr>
+          <tr><td>POS/IT setup</td><td class="num">S$2,000</td><td class="num">S$3,000</td><td class="num">S$4,000</td></tr>
+          <tr><td>E-commerce website build</td><td class="num">S$6,000</td><td class="num">S$10,000</td><td class="num">S$15,000</td></tr>
+          <tr><td>Signage</td><td class="num">S$5,000</td><td class="num">S$8,000</td><td class="num">S$12,000</td></tr>
+          <tr><td>Launch marketing</td><td class="num">S$10,000</td><td class="num">S$20,000</td><td class="num">S$35,000</td></tr>
+          <tr><td>Licensing &amp; first-year insurance</td><td class="num">S$4,000</td><td class="num">S$5,000</td><td class="num">S$7,000</td></tr>
+          <tr><td>Working capital buffer</td><td class="num">S$60,000</td><td class="num">S$90,000</td><td class="num">S$150,000</td></tr>
+          <tr><th>Total Startup Investment</th><th class="num">~S$253,000</th><th class="num">~S$462,000</th><th class="num">~S$755,500</th></tr>
+        </tbody>
+      </table></div>
+
+      <h3>10.2 &nbsp;Monthly Operating Costs (Expected Case, 1,200 sq ft)</h3>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Item</th><th>Monthly</th></tr></thead>
+        <tbody>
+          <tr><td>Rent (~S$10 psf/mo)</td><td class="num">S$12,000</td></tr>
+          <tr><td>Payroll (manager + 2 associates + groomer)</td><td class="num">S$12,500</td></tr>
+          <tr><td>CPF employer contribution (17%)</td><td class="num">S$2,125</td></tr>
+          <tr><td>Utilities</td><td class="num">S$1,500</td></tr>
+          <tr><td>Ongoing marketing</td><td class="num">S$2,000</td></tr>
+          <tr><td>POS/software</td><td class="num">S$200</td></tr>
+          <tr><td>Insurance (amortised)</td><td class="num">S$250</td></tr>
+          <tr><td>Misc/consumables</td><td class="num">S$1,000</td></tr>
+          <tr><th>Total monthly (excl. COGS)</th><th class="num">~S$28,000&ndash;32,000</th></tr>
+        </tbody>
+      </table></div>
+
+      <h3>10.3 &nbsp;Three-Year P&amp;L Forecast</h3>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Metric</th><th>Year 1</th><th>Year 2</th><th>Year 3</th></tr></thead>
+        <tbody>
+          <tr><td>Revenue</td><td class="num">S$650,000</td><td class="num">S$920,000</td><td class="num">S$1,150,000</td></tr>
+          <tr><td>Gross margin %</td><td class="num">40%</td><td class="num">42%</td><td class="num">44%</td></tr>
+          <tr><td>Gross Profit</td><td class="num">S$260,000</td><td class="num">S$386,400</td><td class="num">S$506,000</td></tr>
+          <tr><td>Operating expenses</td><td class="num">S$336,000</td><td class="num">S$360,000</td><td class="num">S$385,000</td></tr>
+          <tr><th>EBITDA</th><th class="num">(S$76,000)</th><th class="num">S$26,400</th><th class="num">S$121,000</th></tr>
+          <tr><td>EBITDA margin</td><td class="num">(11.7%)</td><td class="num">2.9%</td><td class="num">10.5%</td></tr>
+          <tr><td>Break-even revenue</td><td class="num">S$840,000</td><td class="num">S$857,000</td><td class="num">S$875,000</td></tr>
+        </tbody>
+      </table></div>
+      <p><strong>Reading this table honestly:</strong> Year 1 posts an operating loss &mdash; normal for specialty retail ramp-up, explicitly funded by the S$90,000 working-capital buffer already in &sect;10.1. Break-even lands partway through Year 2. <strong>Cumulative 3-year EBITDA (~S$71,400) does not fully repay the S$462,000 initial investment within 3 years</strong> &mdash; full payback realistically lands in <strong>Year 4&ndash;5</strong>. Present this honestly to investors rather than promising an unrealistic 3-year return.</p>
+
+      <h3>10.4 &nbsp;Scenario Comparison</h3>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Scenario</th><th>Startup Capital</th><th>Y1 EBITDA</th><th>Y2 EBITDA</th><th>Y3 EBITDA</th><th>3-Yr Cumulative</th><th>Implied Payback</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Best case</strong></td><td class="num">~S$420,000</td><td class="num">(S$2,000)</td><td class="num">S$129,000</td><td class="num">S$264,000</td><td class="num">S$391,000</td><td>~Year 4</td></tr>
+          <tr><td><strong>Expected case</strong></td><td class="num">S$462,000</td><td class="num">(S$76,000)</td><td class="num">S$26,400</td><td class="num">S$121,000</td><td class="num">S$71,400</td><td>~Year 5</td></tr>
+          <tr><td><strong>Worst case</strong></td><td class="num">S$755,500</td><td class="num">(S$187,000)</td><td class="num">(S$139,000)</td><td class="num">(S$90,000)</td><td class="num">(S$416,000)</td><td><strong>Not achieved within 5 yrs</strong></td></tr>
+        </tbody>
+      </table></div>
+      <p>The worst case is deliberately shown as a genuine failure scenario &mdash; an investment-grade report should not imply guaranteed profitability. It underscores why <strong>location selection (&sect;5) and disciplined capex control (&sect;10.1) are the two highest-leverage decisions</strong> the entrepreneur will make.</p>
+
+      <h3>10.5 &nbsp;Grants That Improve the Model</h3>
+      <ul>
+        <li><strong>Productivity Solutions Grant (PSG)</strong>: up to 50% funding, capped S$30,000/yr, for pre-approved POS/e-commerce/IT solutions.</li>
+        <li><strong>Startup SG Founder</strong>: S$20,000&ndash;50,000 mentorship-linked funding for qualifying first-time entrepreneurs.</li>
+        <li><strong>Progressive Wage Credit Scheme (PWCS)</strong>: co-funds 20&ndash;40% of PWM-mandated wage increases.</li>
+      </ul>
+    </section>
+
+    <section id="sec11">
+      <p class="sec-eyebrow">&sect;11</p>
+      <h2>Marketing Strategy</h2>
+      <hr class="sec-rule"/>
+      <ul>
+        <li><strong>Branding</strong>: position against Pet Lovers Centre's mass-market image &mdash; premium-but-approachable, expertise-led, "your neighbourhood pet specialist."</li>
+        <li><strong>SEO</strong>: target compliance-adjacent search terms ("cat licensing Singapore," "pet microchipping near me," "[neighbourhood] pet grooming") &mdash; a surge in search intent most incumbents aren't addressing directly.</li>
+        <li><strong>Social Media</strong>: Instagram for lifestyle/aesthetic content; community-building around adoption/welfare.</li>
+        <li><strong>TikTok</strong>: highest-growth channel &mdash; grooming transformation videos, new-owner education, staff-led recommendations.</li>
+        <li><strong>Influencers</strong>: local micro-influencers, more cost-effective and higher-trust than macro-influencers on a constrained budget.</li>
+        <li><strong>Membership/Loyalty</strong>: points tied to both retail and grooming; a "new cat owner" onboarding bundle tied to the licensing process.</li>
+        <li><strong>Referral</strong>: incentivise referrals within condo/HDB-estate pet-owner community groups.</li>
+        <li><strong>Launch Campaign</strong>: anchor the grand opening around a grooming promotion + adoption/welfare partnership event.</li>
+      </ul>
+    </section>
+
+    <section id="sec12">
+      <p class="sec-eyebrow">&sect;12</p>
+      <h2>Technology Strategy</h2>
+      <hr class="sec-rule"/>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Layer</th><th>Recommendation</th><th>Basis</th></tr></thead>
+        <tbody>
+          <tr><td>POS</td><td>StoreHub (~US$39&ndash;149/mo) or Shopify POS</td><td>SEA-focused SG-relevant pricing</td></tr>
+          <tr><td>Inventory</td><td>POS-native module</td><td>Avoids integration overhead at single-store scale</td></tr>
+          <tr><td>CRM/Loyalty</td><td>POS-native initially</td><td>Graduate to dedicated CRM once multi-location</td></tr>
+          <tr><td>ERP</td><td>Cloud accounting (e.g. Xero) instead</td><td>ERP overhead disproportionate for one store</td></tr>
+          <tr><td>Website/E-commerce</td><td>Shopify (~S$8,000&ndash;15,000) + Shopee/Lazada listings</td><td>Matches omnichannel requirement, ~45% online reality</td></tr>
+          <tr><td>Mobile App</td><td>Defer</td><td>Not justified until loyalty numbers warrant the build cost</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section id="sec13">
+      <p class="sec-eyebrow">&sect;13</p>
+      <h2>Risk Assessment</h2>
+      <hr class="sec-rule"/>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Risk</th><th>Likelihood</th><th>Impact</th><th>Mitigation</th></tr></thead>
+        <tbody>
+          <tr class="risk-high"><td>Head-on price competition from PLC/Superpets erodes commodity-SKU margin</td><td>High</td><td><span class="sev risk-high">High</span></td><td>Commit to Premium Boutique + Grooming model where these players do not compete directly</td></tr>
+          <tr class="risk-high"><td>Rising heartland rents (doubled y-o-y to record S$7.34 psf by Q2 2025) compress margins</td><td>Med&ndash;High</td><td><span class="sev risk-high">High</span></td><td>Lock in longer lease term early; model escalation explicitly</td></tr>
+          <tr class="risk-medium"><td>PWM-mandated wage increases (2025&ndash;2027) outpace revenue growth</td><td>High (scheduled)</td><td><span class="sev risk-medium">Medium</span></td><td>Budget the full schedule now; leverage PWCS co-funding</td></tr>
+          <tr class="risk-medium"><td>AVS licensing delay or inspection failure delays opening</td><td>Medium</td><td><span class="sev risk-medium">Medium</span></td><td>Engage AVS-recognised training/layout consultant in Month 1&ndash;2</td></tr>
+          <tr class="risk-medium"><td>Import/supply chain disruption (FX, freight, single-distributor dependency)</td><td>Medium</td><td><span class="sev risk-medium">Medium</span></td><td>Multi-source at least 2 distributors per core category</td></tr>
+          <tr class="risk-high"><td>Groomer hiring/retention difficulty</td><td>Medium</td><td><span class="sev risk-high">High</span></td><td>Budget toward top of salary range; performance/tip-share structure</td></tr>
+          <tr class="risk-medium"><td>Pet population growth plateaus, capping long-term volume upside</td><td>High (structural)</td><td><span class="sev risk-medium">Medium</span></td><td>Model already designed around services/premiumization, not volume</td></tr>
+          <tr class="risk-medium"><td>New premium entrants (HUFT) intensify competition in the same positioning</td><td>Medium</td><td><span class="sev risk-medium">Medium</span></td><td>Differentiate via hyperlocal service/community, not brand curation alone</td></tr>
+          <tr class="risk-low"><td>GST threshold reached mid-Year 2/3 without preparation</td><td>Medium</td><td><span class="sev risk-low">Low&ndash;Med</span></td><td>Engage accountant in Year 2 to plan registration timing</td></tr>
+          <tr class="risk-medium"><td>Regulatory ambiguity on SFA feed-licensing for resale of imported food</td><td>Low&ndash;Medium</td><td><span class="sev risk-medium">Medium</span></td><td>Obtain written AVS/SFA confirmation before finalizing import structure</td></tr>
+          <tr class="risk-high"><td>Worst-case scenario materializes &mdash; no profitability within 5 years</td><td>Low&ndash;Medium</td><td><span class="sev risk-high">Severe</span></td><td>Location selection (&sect;5) and capex discipline (&sect;10.1) are the highest-leverage mitigations</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section id="sec14">
+      <p class="sec-eyebrow">&sect;14</p>
+      <h2>12-Month Implementation Roadmap</h2>
+      <hr class="sec-rule"/>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Month</th><th>Milestones</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td>Finalize plan/model; engage accountant; register via ACRA/Bizfile; begin AVS training; shortlist locations (Serangoon/Katong)</td></tr>
+          <tr><td class="num">2</td><td>Site visits, lease negotiation; fit-out contractor quotes; URA Change of Use if needed; begin AVS licence application</td></tr>
+          <tr><td class="num">3</td><td>Sign lease; commence fit-out; finalize supplier agreements (min. 2 per core category); order initial inventory; Retail Group Pet Licence if applicable</td></tr>
+          <tr><td class="num">4</td><td>Complete fit-out; install POS/IT; AVS premises inspection; hire manager, associates, groomer; staff training</td></tr>
+          <tr><td class="num">5</td><td>Soft launch; finalize e-commerce site; set up Shopee/Lazada listings; test grooming operations</td></tr>
+          <tr><td class="num">6</td><td><strong>Grand opening</strong> &mdash; grooming promotion + adoption/welfare partnership event; loyalty enrolment begins</td></tr>
+          <tr><td class="num">7&ndash;8</td><td>Monitor sales vs. Year 1 targets; adjust inventory mix; launch TikTok/influencer cadence</td></tr>
+          <tr><td class="num">9</td><td>Apply for PSG grant; evaluate performance vs. break-even trajectory</td></tr>
+          <tr><td class="num">10</td><td>Assess groomer capacity; consider a second station/extended hours</td></tr>
+          <tr><td class="num">11</td><td>Review full-year performance vs. Best/Expected/Worst case; plan Year 2 marketing calendar</td></tr>
+          <tr><td class="num">12</td><td>Full Year 1 review; assess GST timeline; begin Bishan site evaluation for a second location</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section id="sec15">
+      <p class="sec-eyebrow">&sect;15</p>
+      <h2>AI Opportunities</h2>
+      <hr class="sec-rule"/>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Opportunity</th><th>Application</th><th>Priority</th></tr></thead>
+        <tbody>
+          <tr><td>Demand forecasting/inventory optimization</td><td>Reduce overstock on slow-movers, prevent stockouts on high-velocity SKUs</td><td>High</td></tr>
+          <tr><td>AI customer service chatbot</td><td>Handle store hours, availability, grooming bookings, licensing FAQs</td><td>Medium</td></tr>
+          <tr><td>Personalized product recommendations</td><td>Life-stage food transitions, purchase-history-driven suggestions</td><td>Medium</td></tr>
+          <tr><td>AI-generated social content</td><td>TikTok/Instagram captions, grooming before/after scheduling</td><td>High</td></tr>
+          <tr><td>Computer-vision breed/size estimation</td><td>Help first-time owners select correctly-sized products</td><td>Low&ndash;Medium</td></tr>
+          <tr><td>AI-assisted grooming scheduling</td><td>Predict peak demand, optimize groomer capacity</td><td>High</td></tr>
+          <tr><td>Loyalty segmentation</td><td>Identify high-value customers for targeted premium offers</td><td>Medium</td></tr>
+        </tbody>
+      </table></div>
+      <p><strong>Practical note:</strong> none of this requires bespoke AI development &mdash; off-the-shelf tools (Shopify's built-in AI, ChatGPT/Claude for content, POS-native forecasting) deliver most of this value at low incremental cost.</p>
+    </section>
+
+    <section id="sec16">
+      <p class="sec-eyebrow">&sect;16</p>
+      <h2>Final Recommendations</h2>
+      <hr class="sec-rule"/>
+      <ol>
+        <li><strong>Business model</strong>: Premium Boutique + Grooming, Hybrid Online/Offline from Day 1 &mdash; do not compete on price/scale with PLC or Superpets.</li>
+        <li><strong>Location</strong>: Open the flagship in <strong>Serangoon</strong> or <strong>Katong/Marine Parade</strong>; treat <strong>Bishan</strong> as the priority second-store candidate.</li>
+        <li><strong>Category focus</strong>: Weight inventory toward <strong>cat products</strong> and <strong>grooming-adjacent retail</strong>.</li>
+        <li><strong>Capital plan</strong>: Budget the Expected Case <strong>~S$462,000</strong>, fund the Year 1 loss via the working-capital buffer, set expectations for <strong>Year 4&ndash;5 payback</strong>.</li>
+        <li><strong>Regulatory sequencing</strong>: Start AVS training/licensing in Month 1, in parallel with company registration.</li>
+        <li><strong>Supplier strategy</strong>: Multi-source at least two distributors per core category; hold private-label ambitions to accessories/grooming initially.</li>
+        <li><strong>Marketing</strong>: Lead with TikTok and grooming-content marketing, anchored by a values-aligned launch event.</li>
+        <li><strong>Risk discipline</strong>: Location selection and capex discipline are the two highest-leverage levers &mdash; the modelled worst case shows genuine failure risk if either is mismanaged.</li>
+        <li><strong>Grants</strong>: Apply for PSG and evaluate Startup SG Founder eligibility.</li>
+        <li><strong>Data gaps to close</strong>: confirm the AVS import/export licence fee, confirm SFA feed-licence applicability to pure resale, and obtain a live broker/HDB quote for the specific shortlisted unit's rent.</li>
+      </ol>
+    </section>
+
+    <section id="sec17">
+      <p class="sec-eyebrow">&sect;17</p>
+      <h2>References</h2>
+      <hr class="sec-rule"/>
+      <h3>Government / Primary Sources</h3>
+      <p style="max-width:none;">
+        ACRA &middot; Registering a business &amp; Fees &middot; Bizfile &middot; AVS &middot; Pet Shop Licence, Licensing Conditions, Retail Group Pet Licence &middot; GoBusiness Licensing &middot; NParks &middot; Cat Management Framework, licensing updates (Sept 2025) &middot; HDB &middot; Pet Cat Licensing press release, Rental Enquiry Portal &middot; SFA &middot; Animal Feed &amp; Food Retail Licensing &middot; IRAS &middot; GST registration &amp; 2024 rate change guide &middot; MOM &middot; Employment practices, Progressive Wage Model (Retail), Foreign Worker Levy &middot; CPF Board &middot; Contribution rates from 1 Jan 2026 &middot; URA &middot; Change of Use &middot; BCA &middot; Signboard Licence &middot; SCDF &middot; Fire Certificate &middot; SPCA Singapore &middot; Animal Cruelty &amp; Welfare Report 2024 &middot; Enterprise Singapore &middot; PSG, EDG, SFEC, Pet Lovers Centre case study &middot; SingStat / data.gov.sg &middot; Census of Population 2020, Key Household Income Trends 2025
+      </p>
+      <h3>Industry / Syndicated Research</h3>
+      <p style="max-width:none;">
+        Euromonitor &middot; APAC pet care press release, premiumisation trends article &middot; GlobalPETS &middot; Singapore market updates, SEA e-commerce trends &middot; Pet Fair South-East Asia &middot; Singapore Pet Market &middot; Tractus Asia &middot; Singapore's Pet Market &middot; US Dept. of Commerce (trade.gov) &middot; Singapore Pet Products &middot; ResearchAndMarkets &middot; Pet Healthcare in Singapore reports &middot; TGM Research &middot; Pet Care Behavior &amp; Ownership 2024 &middot; Knight Frank &middot; Singapore Retail Market Update Q4 2025 &middot; CBRE &middot; 2025 Singapore Real Estate Market Outlook &middot; 99.co &middot; HDB shop rent reporting &middot; The Online Citizen &middot; Parliamentary HDB rent reporting &middot; Cosmos D&eacute;cor &middot; Retail Renovation Cost Singapore 2026 &middot; IBISWorld &middot; Pet Stores US Industry Analysis 2026 &middot; Retail Owner Institute &middot; Pet &amp; Pet Supplies Stores Benchmarks &middot; StoreHub &amp; Shopify SG &middot; POS &amp; e-commerce cost guides
+      </p>
+      <h3>Company / News Sources</h3>
+      <p style="max-width:none;">
+        Pet Lovers Centre (Wikipedia) &middot; Forbes India &amp; IndiaRetailing &middot; Heads Up For Tails Singapore entry/expansion &middot; CatSmart &middot; Our Story &middot; Superpets &middot; Store locations &middot; Mothership.sg &middot; Neko no Niwa closure (2022), SPCA 2024 report &middot; PetfoodProcessing &middot; Petico enters Singapore market
+      </p>
+      <p style="margin-top:1.5rem; font-style:italic; color:var(--slate);">This report synthesizes publicly available data as of July 2026. Several figures are explicitly flagged as estimates or proxies due to the absence of Singapore-specific published data; validate with direct supplier/broker/regulator confirmation before final investment or lending decisions.</p>
+    </section>
+
+  </main>
+</div>
+
+<footer class="doc-footer">
+  Singapore Pet Retail Market Research &amp; Feasibility Report &middot; Prepared July 2026 &middot; For planning purposes only &mdash; not a guarantee of investment outcomes.
+</footer>
+
+<script>
+  // Collapsible TOC on narrow viewports
+  (function(){
+    var nav = document.getElementById('tocNav');
+    function applyMode(){
+      if (window.innerWidth <= 960) {
+        if (!nav.hasAttribute('data-collapsible')) {
+          nav.setAttribute('data-collapsible','true');
+          var label = nav.querySelector('.toclabel');
+          label.style.cursor = 'pointer';
+          label.addEventListener('click', function(){
+            nav.toggleAttribute('open');
+          });
+        }
+      }
+    }
+    applyMode();
+    window.addEventListener('resize', applyMode);
+  })();
+</script>
